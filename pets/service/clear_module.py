@@ -17,9 +17,6 @@ def delete_file(list_name_file: list) -> None:
         if os.path.isfile(path):
             os.remove(path)
         else:
-            # Представим что тут логгирование
-            # или записываем файлы которые не удалось
-            # найти и удалить
             print("Не удалось найти файл")
             pass
 
