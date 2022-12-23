@@ -37,7 +37,7 @@ POST: http://localhost:8000/pets
 }  
 ![Иллюстрация к проекту](https://github.com/georg220022/pets/blob/main/img/add_pet.png)    
 ##### Добавление фото:  
-POST: http://localhost:8000/pets/<UUID>/photo  
+POST: http://localhost:8000/pets/UUID/photo  
 В Postman'e: Body -> form-data  
 ключ: binary  
 значение: прикрепить картинку  
