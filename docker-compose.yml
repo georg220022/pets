@@ -1,0 +1,42 @@
+version: "3.9"
+
+volumes:
+  postgres_data:
+  static_value:
+  media_value:
+
+services:
+
+  web:
+    build:
+      context: pets/.
+      dockerfile: Dockerfile
+    restart: always
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+
+  postgres:
+    image: postgres:13.3
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_DB: "pet_db"
+      POSTGRES_USER: "pet_user"
+      POSTGRES_PASSWORD: "pet_pass"
+    ports:
+      - 5432
+  
+  nginx:
+    image: nginx:1.19.3
+    restart: always
+    ports:
+      - 8000:8000
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - static_value:/static/
+      - media_value:/pets/media/
+    depends_on:
+      - web
