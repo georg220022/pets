@@ -1,5 +1,6 @@
 ## Pets app
-##### Стек: Python, Django, DRF, Postgres, Nginx, Docker(compose), SQL  
+##### Стек: Python, Django, DRF, Postgres, Nginx, Docker(compose), SQL 
+##### Требования: Docker(compose) 
 ##### Лучше запускать на локальной машине или на ПУСТОМ облаке, иначе порты или nginx уже настраивать у вас  
 #### Если запуск на локальной машине, раздел "Настройка для сервера" - пропустить.  
 ##### Настройка для сервера:  
@@ -58,3 +59,5 @@ DELETE: http://localhost:8000/pets
 Все записи: ```docker exec -it pets-web-1 python3 get_data.py```   
 С фото: ```docker exec -it pets-web-1 python3 get_data.py has-photos: true```  
 Без фото: ```docker exec -it pets-web-1 python3 get_data.py has-photos: false```  
+
+telegram: https://t.me/georg2022bcknd
