@@ -16,6 +16,8 @@
 Клонировать репозиторий: ```git clone git@github.com:georg220022/pets.git```  
 Перейти в папку с docker-compose, выполнить команду: ```docker-compose up -d```  
 Выполнить 3 команды:  
+узнать имя контейнера образа pets-web ```docker container ls```  
+у меня это pets-web-1  
 ```
 docker exec -it pets-web-1 python3 manage.py makemigrations  
 docker exec -it pets-web-1 python3 manage.py migrate  
