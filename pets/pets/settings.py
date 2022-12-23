@@ -12,8 +12,8 @@ API_KEY_LIST = [
     os.getenv("API_KEY_2")
     ]
 
-SECRET_KEY = "django-insecure-s0)z^oeoycx@016x^(7w)mcczwx)x)l0%x6)f@=*)#byycq^!x"
-DEBUG = True
+SECRET_KEY = os.getenv("SECRET_KEY")
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 

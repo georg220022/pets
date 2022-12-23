@@ -1,4 +1,5 @@
 import uuid
+import os
 
 from rest_framework import status, viewsets, generics
 from rest_framework.response import Response
@@ -14,6 +15,7 @@ from service.clear_module import deleter
 from .serializers import PetSerializer
 from .models import Pets, Photos
 
+URL = os.getenv("HOST") + os.getenv("PORT")
 
 class PetsModelViewSet(viewsets.ModelViewSet):
     serializer_class = PetSerializer
@@ -47,7 +49,7 @@ class PetsModelViewSet(viewsets.ModelViewSet):
             obj_pet = get_object_or_404(Pets, id=id_uuid)
             obj_photo = Photos.objects.create(image=photo, pet_id=obj_pet)
             obj_photo.url = (
-                "http://localhost:8000/media/" + obj_photo.image.name
+                URL + "/media/" + obj_photo.image.name
             )
             obj_photo.save()
             data = dict(id=obj_photo.id, url=obj_photo.url)
