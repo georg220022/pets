@@ -50,6 +50,8 @@ GET: http://localhost:8000/pets?limit=1&offset=0&has_photos=true
 DELETE: http://localhost:8000/pets  
 ![Иллюстрация к проекту](https://github.com/georg220022/pets/blob/main/img/deleted.png)  
 #### CLI:  
+P.s Указать свое имя контейнера pets-web-1, если не совпадает. 
+узнать имя: ```docker container ls```   
 Все записи: ```docker exec -it pets-web-1 python3 get_data.py```   
 С фото: ```docker exec -it pets-web-1 python3 get_data.py has-photos: true```  
 Без фото: ```docker exec -it pets-web-1 python3 get_data.py has-photos: false```  
